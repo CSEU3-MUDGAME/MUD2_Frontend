@@ -3,7 +3,7 @@ import { Link, Route} from "react-router-dom";
 import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
-import MudMap from './Map';
+import Game from './Game';
 
 export default function Navbar(props){
     return(
@@ -17,7 +17,7 @@ export default function Navbar(props){
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
-                <Route exact path="/play" component={MudMap} />
+                <Route exact path="/play" component={Game} />
             </main>
         </div>
     );

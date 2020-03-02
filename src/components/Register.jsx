@@ -16,6 +16,7 @@ export default function Register(props){
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.key)
+            props.history.push("/play")
         })
         .catch(err => {
             console.log(err)

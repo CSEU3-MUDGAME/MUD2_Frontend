@@ -7,13 +7,14 @@ export default function Login(props){
 
     const handlelogin = (e) => {
         e.preventDefault();
-        axios.post("https://lambda-mud-test.herokuapp.com/api/login/", {
+        axios.post("https://lambda-mud-test.herokuapp.com/api/login/",{
             username: usernameRef.current.value,
             password: passwordRef.current.value,
         })
         .then(res => {
             console.log(res)
             localStorage.setItem('token', res.data.key)
+            props.history.push("/play")
         })
         .catch(err => {
             console.log(err)

@@ -15,6 +15,7 @@ export default function Register(props){
         })
         .then(res => {
             console.log(res)
+            localStorage.setItem('token', res.data.key)
         })
         .catch(err => {
             console.log(err)

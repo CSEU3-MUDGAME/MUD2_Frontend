@@ -4,6 +4,7 @@ import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
 import Game from './Game';
+import { ProtectedRoute } from '../utils/ProtectedRoute';
 
 export default function Navbar(props){
     return(
@@ -17,7 +18,7 @@ export default function Navbar(props){
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
-                <Route exact path="/play" component={Game} />
+                <ProtectedRoute path="/play" component={Game} />
             </main>
         </div>
     );

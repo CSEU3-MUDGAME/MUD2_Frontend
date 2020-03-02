@@ -1,7 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
-export default function MudMap(props){
+export default function Game(props){
     const [ room, setRoom ] = useState();
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export default function MudMap(props){
 
     return (
         <div>
-            Map
+            Game
         </div>
     );
 }

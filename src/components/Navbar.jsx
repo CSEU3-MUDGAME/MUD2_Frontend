@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Route} from "react-router-dom";
 import Landing from './Landing';
 import Auth from './Auth';
-import Game from './Game';
+import Game from './Game/Game';
 import { ProtectedRoute } from '../utils/ProtectedRoute';
 import { StyledNavbar } from '../styles/navbar';
 

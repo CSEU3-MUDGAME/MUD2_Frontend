@@ -5,8 +5,7 @@ export default function Login(props){
     const usernameRef = useRef();
     const passwordRef = useRef();
 
-    const handlelogin = (e) => {
-        e.preventDefault();
+    const handlelogin = () => {
         axios.post("https://lambda-mud-test.herokuapp.com/api/login/",{
             username: usernameRef.current.value,
             password: passwordRef.current.value,

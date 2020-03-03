@@ -1,11 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useHistory } from "react";
 import axios from "axios";
 
 export default function Auth(props) {
   const [authType, setAuthType] = useState("login");
   return (
     <>
-      {authType === "login" ? <Login /> : <Register />}
+    {console.log(props)}
+      {authType === "login" ? <Login {...props} /> : <Register {...props}/>}
       {authType === "login" ? (
         <p>
           Don't have an account yet? Register{" "}
@@ -24,6 +25,7 @@ export default function Auth(props) {
 function Login(props) {
   const usernameRef = useRef();
   const passwordRef = useRef();
+
 
   const handlelogin = () => {
     axios

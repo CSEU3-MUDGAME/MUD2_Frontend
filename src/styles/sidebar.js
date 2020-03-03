@@ -5,4 +5,8 @@ export const StyledSidebar = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
+    .game-data, .controls, .players {
+        margin: 2rem 0;
+        border: 1px solid black;
+    }
 `

@@ -20,13 +20,25 @@ export default function Sidebar(props) {
   
     return (
       <StyledSidebar>
-          Sidebar
         {!gameData ? (
           "Loading"
         ) : (
-          <div>
-              <p>{gameData.name}</p>
+            <>
+          <div className='game-data'>
+              <p>Player: {gameData.name}</p>
+              <p>Room Title: {gameData.title}</p>
+              <p>Room Description: {gameData.description}</p>
           </div>
+          <div className='controls'>
+            <button id="n">N</button>
+            <button id="s">S</button>
+            <button id="e">E</button>
+            <button id="w">W</button>
+          </div>
+          <div className='players'>
+            {gameData.players.map(player => <p key={player}>{player}</p>)}
+          </div>
+          </>
         )}
       </StyledSidebar>
     );

@@ -1,11 +1,10 @@
-import React, { useRef, useState, useHistory } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 
 export default function Auth(props) {
   const [authType, setAuthType] = useState("login");
   return (
     <>
-    {console.log(props)}
       {authType === "login" ? <Login {...props} /> : <Register {...props}/>}
       {authType === "login" ? (
         <p>

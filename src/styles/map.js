@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import mapBg from '../assets/images/old-map-bg.jpg';
 
 export const StyledMap = styled.div`
     height: 100%;
     width: 60%;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    background-image: url(${mapBg});
     .row {
         display: flex;
         width: 100%;

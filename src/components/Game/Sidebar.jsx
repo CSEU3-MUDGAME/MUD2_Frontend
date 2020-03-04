@@ -23,9 +23,9 @@ export function Sidebar(props) {
             <button id="e">E</button>
             <button id="w">W</button>
           </div>
-          <div className='players'>
+          {/* <div className='players'>
             {player.players.map(player => <p key={player}>{player}</p>)}
-          </div>
+          </div> */}
           </>
         )}
       </StyledSidebar>

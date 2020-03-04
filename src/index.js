@@ -9,7 +9,8 @@ import * as reducers from './store/reducers';
 import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 
 const rootReducer = combineReducers({
-    player: reducers.playerReducer
+    player: reducers.playerReducer,
+    rooms: reducers.roomsReducer
 })
 
 const store = createStore(

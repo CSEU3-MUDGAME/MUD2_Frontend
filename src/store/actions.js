@@ -21,3 +21,9 @@ export const movePlayer = () => dispatch => {
         type: types.MOVE_PLAYER,
       })
 }
+
+export const getRooms = () => dispatch => {
+  dispatch({
+    type: types.GET_ROOMS,
+  })
+}

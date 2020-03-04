@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyledMap } from '../../styles/map';
 import Player from './Player';
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 
 export function Map(props) {
-  const { player, rooms } = props;
+  const { player, rooms, getRooms } = props;
+
+  useEffect(() => {
+    getRooms()
+  }, [getRooms])
+
     return (
       <StyledMap>
           {rooms.map(row => 

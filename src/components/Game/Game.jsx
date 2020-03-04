@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import { StyledGameWrapper } from '../../styles/game';
 
-function Game(props) {
+export function Game(props) {
   return (
     <StyledGameWrapper>
       <Map />

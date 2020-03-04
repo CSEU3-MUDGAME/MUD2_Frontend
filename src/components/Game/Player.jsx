@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
 
-export default function Player(props) {
-    const {gameData, setGameData, movePlayer} = props;
+export function Player(props) {
+    const { player } = props;
 
     return (
       <div>
@@ -9,3 +11,6 @@ export default function Player(props) {
       </div>
     );
   }
+ 
+
+  export default connect(state=>state, actions)(Player)    

@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React from "react";
 import Sidebar from './Sidebar';
 import Map from "./Map";
 import { connect } from "react-redux";

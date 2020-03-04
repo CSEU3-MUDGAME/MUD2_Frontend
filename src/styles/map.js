@@ -3,7 +3,7 @@ import mapBg from '../assets/images/old-map-bg.jpg';
 
 export const StyledMap = styled.div`
     height: 100%;
-    width: 60%;
+    width: 70%;
     padding: 2rem;
     display: flex;
     justify-content: space-between;

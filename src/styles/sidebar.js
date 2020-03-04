@@ -5,12 +5,21 @@ export const StyledSidebar = styled.div`
     width: 30%;
     display: flex;
     flex-direction: column;
+    padding: 2rem;
     .controls, .players {
-        margin: 2rem 0;
-        border: 1px solid black;
+        margin: 1.5rem 0;
+        border: 4px solid #a52929;
     }
-    .game-data{
-        margin: 0 0 2rem 0;
-        border: 1px solid black;
+    .game-data {
+        margin: 0 0 1.5rem 0;
+        border: 4px solid #a52929;
+        padding: 2rem;
+    }
+    .players {
+        overflow: hidden;
+        padding: 1rem;
+    }
+    .controls {
+        padding: 2rem;
     }
 `

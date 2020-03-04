@@ -1,33 +1,21 @@
 import React from 'react';
-import axiosWithAuth from "../../utils/axiosWithAuth";
 import { StyledSidebar } from '../../styles/sidebar';
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
 
-export default function Sidebar(props) {
-    const { gameData, setGameData } = props;
-   
-    const movePlayer = e => {
-      axiosWithAuth()
-        .post("https://lambda-mud-test.herokuapp.com/api/adv/move/", {
-          direction: e.target.id
-        })
-        .then(res => {
-          setGameData(res.data)
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    };
+export function Sidebar(props) {
+    const { player } = props;
   
     return (
       <StyledSidebar>
-        {!gameData ? (
+        {!player ? (
           "Loading"
         ) : (
             <>
           <div className='game-data'>
-              <p>Player: {gameData.name}</p>
-              <p>Room Title: {gameData.title}</p>
-              <p>Room Description: {gameData.description}</p>
+              <p>Player: {player.name}</p>
+              <p>Room Title: {player.title}</p>
+              <p>Room Description: {player.description}</p>
           </div>
           <div className='controls'>
             <button id="n">N</button>
@@ -36,10 +24,12 @@ export default function Sidebar(props) {
             <button id="w">W</button>
           </div>
           <div className='players'>
-            {gameData.players.map(player => <p key={player}>{player}</p>)}
+            {player.players.map(player => <p key={player}>{player}</p>)}
           </div>
           </>
         )}
       </StyledSidebar>
     );
   }
+
+  export default connect(state=>state, actions)(Sidebar)      

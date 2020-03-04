@@ -6,10 +6,9 @@ export default function Map(props) {
     return (
       <StyledMap>
           {mockMap.map(row => 
-            <div className="row">
+            <div className="column">
               {row.map(room => {
-              return  <div className={`room n-wall-${room.sides.up} e-wall-${room.sides.right} s-wall-${room.sides.down} w-wall-${room.sides.left}`}>
-               {room.id}
+              return <div className={`room n-wall-${room.sides.up} s-wall-${room.sides.down} e-wall-${room.sides.right} w-wall-${room.sides.left} wall-l-${room.id < 30} wall-r-${room.id >= 870} wall-t-${room.id % 30 === 0} `}>
                </div>
               })}
             </div>

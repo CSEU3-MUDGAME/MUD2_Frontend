@@ -29,6 +29,8 @@ export const StyledSidebar = styled.div`
                 height: 100px;
             }
             img {
+                border-radius: 50%;
+                border: 5px solid #fdd360;
                 &:hover {
                     cursor: pointer;
                 }

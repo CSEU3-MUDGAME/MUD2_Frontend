@@ -18,6 +18,15 @@ export const StyledMap = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            .coins {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                z-index: 1;
+            }
+            .robot {
+                z-index: 7;
+            }
             &.n-wall-true {
                 border-top: 2px solid #a52929;
             }

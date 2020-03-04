@@ -21,5 +21,18 @@ export const StyledSidebar = styled.div`
     }
     .controls {
         padding: 2rem;
+        .row {
+            display: flex;
+            justify-content: center;
+            .empty, img {
+                width: 35%;
+                height: 100px;
+            }
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 `

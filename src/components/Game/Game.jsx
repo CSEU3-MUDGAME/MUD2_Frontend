@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axiosWithAuth from "../../utils/axiosWithAuth";
+import React, { useEffect} from "react";
 import Sidebar from './Sidebar';
 import Map from "./Map";
+import { connect } from "react-redux";
+import * as actions from "../../store/actions";
 import { StyledGameWrapper } from '../../styles/game';
 
-export default function Game(props) {
-  const [gameData, setGameData] = useState();
-
-  useEffect(() => {
-  }, []);
-
+function Game(props) {
   return (
     <StyledGameWrapper>
       <Map />
-      {!gameData ? (
-        "Loading"
-      ) : (
-        <Sidebar gameData={gameData} setGameData={setGameData}/>
-      )}
+      <Sidebar/>
     </StyledGameWrapper>
   );
 }
+export default connect(state=>state, actions)(Game)

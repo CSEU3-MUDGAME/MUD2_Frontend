@@ -16,9 +16,10 @@ export const initGame = () => dispatch => {
     );
 };
 
-export const movePlayer = () => dispatch => {
+export const movePlayer = (dir) => dispatch => {
     dispatch({
         type: types.MOVE_PLAYER,
+        payload: dir 
       })
 }
 

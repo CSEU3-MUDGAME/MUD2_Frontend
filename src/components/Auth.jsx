@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 
+import {AuthStyle} from "../styles/auth"
+
 export default function Auth(props) {
   const [authType, setAuthType] = useState("login");
   return (
-    <>
+    <AuthStyle>
       {authType === "login" ? <Login {...props} /> : <Register {...props}/>}
       {authType === "login" ? (
         <p>
@@ -17,7 +19,7 @@ export default function Auth(props) {
           <span onClick={() => setAuthType("login")}>here</span>
         </p>
       )}
-    </>
+    </AuthStyle>
   );
 }
 
@@ -42,22 +44,22 @@ function Login(props) {
       });
   };
   return (
-    <div>
-      <h1>Log In</h1>
+    <AuthStyle>
+      <h1>Log In Here!</h1>
       <input
         name="username"
         type="text"
         ref={usernameRef}
-        placeholder="Username"
+        placeholder="Enter username"
       />
       <input
         name="password"
         type="password"
         ref={passwordRef}
-        placeholder="Password"
+        placeholder="Enter your secret code"
       />
       <button onClick={handlelogin}>Go</button>
-    </div>
+    </AuthStyle>
   );
 }
 
@@ -84,27 +86,27 @@ function Register(props) {
       });
   };
   return (
-    <div>
+    <AuthStyle>
       <h1>Register</h1>
       <input
         name="username"
         type="text"
         ref={usernameRef}
-        placeholder="Username"
+        placeholder="What shall we call you?"
       />
       <input
         name="password1"
         type="password"
         ref={password1Ref}
-        placeholder="Password"
+        placeholder="Enter your secret code"
       />
       <input
         name="password2"
         type="password"
         ref={password2Ref}
-        placeholder="Confirm Password"
+        placeholder="Confirm secret code"
       />
       <button onClick={handleregister}>Go</button>
-    </div>
+    </AuthStyle>
   );
 }

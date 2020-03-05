@@ -13,7 +13,7 @@ export const StyledMap = styled.div`
     width: ${100/25}%;
     height: ${100/30}%;
     box-sizing: border-box;
-    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.4);
 
     .coins {
       width: 20px;

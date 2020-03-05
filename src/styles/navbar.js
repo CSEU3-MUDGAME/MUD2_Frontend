@@ -7,6 +7,13 @@ export const StyledNavbar = styled.nav`
     align-items: center;
     a {
         text-decoration: none;
-        color: black;
-    }
+        color: white;
+        font-size: 30px;
+    };
+    font-family:'zorque', sans-serif;
+
+`
+export const MainStyle = styled.main`
+        display: flex;
+        flex-direction: column;
 `

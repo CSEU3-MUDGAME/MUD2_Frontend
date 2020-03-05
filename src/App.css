@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  font-family:'zorque', sans-serif;
+  color: white;
+}
+
+@font-face {
+  font-family: 'zorque';
+  src: 
+    local('zorque'),
+    url('../src/assets/fonts/zorque.ttf')
+    format('truetype');
 }
 
 .App-logo {
@@ -36,3 +46,14 @@
     transform: rotate(360deg);
   }
 }
+
+html { 
+  background: url(../src/assets/images/landing.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 1000px;
+  overflow: hidden;
+}
+

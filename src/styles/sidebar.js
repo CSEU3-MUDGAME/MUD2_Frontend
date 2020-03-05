@@ -8,13 +8,13 @@ export const StyledSidebar = styled.div`
     margin-left: 1rem;
     justify-content: space-between;
     .controls, .players {
-        border: 4px solid #a52929;
+        border: 4px solid #8B4513;
     }
     .game-data {
         margin: 0 0 1.5rem 0;
-        border: 4px solid #a52929;
+        border: 4px solid #8B4513;
         padding: 2rem;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.5);
         .dirs {
             p {
                 margin: 0;

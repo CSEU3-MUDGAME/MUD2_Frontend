@@ -50,6 +50,11 @@ export function Sidebar(props) {
               <p>{player.left === true ? "left" : null}</p>
               <p>{player.right === true ? "right" : null}</p>
             </div>
+            {/* <div>
+              Items
+              {!player.items ? null : player.items.split(",").map(item => <p>{item}</p>)}
+     
+            </div> */}
           </div>
           <div className="controls">
             <div className="row">

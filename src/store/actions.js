@@ -23,17 +23,13 @@ export const movePlayer = dir => dispatch => {
 };
 
 export const getRooms = () => dispatch => {
-  // dispatch({
-  //   // axios request for rooms
-  //   type: types.GET_ROOMS,
-  // })
   axiosWithAuth()
     .get("https://adv-team2.herokuapp.com/api/adv/get_rooms/")
     .then(res => {
       console.log(res);
       dispatch({
         type: types.GET_ROOMS,
-        payload: res.data
+        payload: [res.data]
       });
     })
     .catch(err => console.log(err));

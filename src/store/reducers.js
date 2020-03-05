@@ -6,7 +6,7 @@ const initialState = {
         name: "Megan",
         positionx: 0,
         positiony: 0,
-        currentRoom: mockMap[0][0],
+        currentRoom: 1,
         score: 0
     },
     rooms: mockMap

@@ -26,6 +26,7 @@ export const StyledMap = styled.div`
             }
             .robot {
                 z-index: 7;
+                padding: 0;
             }
             &.n-wall-true {
                 border-top: 2px solid #a52929;

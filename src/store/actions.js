@@ -28,3 +28,10 @@ export const getRooms = () => dispatch => {
     type: types.GET_ROOMS,
   })
 }
+
+export const addScore = (amt) => dispatch => {
+  dispatch({
+    type: types.ADD_SCORE,
+    payload: amt 
+  })
+}

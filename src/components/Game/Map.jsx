@@ -6,10 +6,11 @@ import * as actions from "../../store/actions";
 import coins from "../../assets/icons/coins.png";
 
 export function Map(props) {
-  const { player, rooms, getRooms, addScore } = props;
+  const { player, rooms, getRooms, addScore, initGame } = props;
 
   useEffect(() => {
     getRooms();
+    initGame();
   }, []);
 
 return (
@@ -17,8 +18,8 @@ return (
       {!rooms ? "Loading" : rooms.map(row => (
           row.map(room => {
             return(
-            <div className={`room n-wall-${room.up} s-wall-${room.down} e-wall-${room.right} w-wall-${room.left}`}>
-             <>{room.id === player.currentRoom ? <Player /> : null}</>
+            <div key={room.id} className={`room n-wall-${room.up} s-wall-${room.down} e-wall-${room.right} w-wall-${room.left}`}>
+             <>{room.id === player.roomNo ? <Player /> : null}</>
             </div>)
           })
           
@@ -30,7 +31,7 @@ return (
 const mapStateToProps = state => {
   return {
     rooms: state.rooms.rooms,
-    player: state.player
+    player: state.player.player
   };
 };
 

@@ -37,33 +37,38 @@ export function Sidebar(props) {
         <>
           <div className="game-data">
             <p>Player: {player.name}</p>
-            <p>Room Number: {player.currentRoom.id}</p>
-            <p>Score: {player.score}</p>
+            <p>Room Number: {player.roomNo}</p>
+
+            <div>Players: {player.players.map(p => <p key={p}>{p}</p>)}</div> 
           </div>
           <div className="controls">
             <div className="row">
               <div className="empty"></div>
-              <img src={arrowUp} onClick={() => "s"} alt="up" id="up"/>
+              <img src={arrowUp} onClick={() => movePlayer("n")} alt="up" id="up"/>
               <div className="empty"></div>
             </div>
             <div className="row">
-              <img src={arrowLeft} onClick={() => movePlayer(-30)} alt="left" id="left"/>
+              <img src={arrowLeft} onClick={() => movePlayer("w")} alt="left" id="left"/>
               <div className="empty"></div>
-              <img src={arrowRight} onClick={() => movePlayer(+30)} alt="right" id="right"/>
+              <img src={arrowRight} onClick={() => movePlayer("e")} alt="right" id="right"/>
             </div>
             <div className="row">
               <div className="empty"></div>
-              <img src={arrowDown} onClick={() => movePlayer(+1)} alt="down" id="down"/>
+              <img src={arrowDown} onClick={() => movePlayer("s")} alt="down" id="down"/>
               <div className="empty"></div>
             </div>
           </div>
-          {/* <div className='players'>
-            {player.players.map(player => <p key={player}>{player}</p>)}
-          </div> */}
         </>
       )}
     </StyledSidebar>
   );
 }
 
-export default connect(state => state, actions)(Sidebar);
+const mapStateToProps = state => {
+  return {
+    player: state.player.player
+  };
+};
+
+
+export default connect(mapStateToProps, actions)(Sidebar);

@@ -16,10 +16,16 @@ export const initGame = () => dispatch => {
 };
 
 export const movePlayer = dir => dispatch => {
-  dispatch({
-    type: types.MOVE_PLAYER,
-    payload: dir
-  });
+  axiosWithAuth()
+    .post("https://adv-team2.herokuapp.com/api/adv/move/", {direction: dir})
+    .then(res => {
+      console.log(res);
+      dispatch({
+        type: types.MOVE_PLAYER,
+        payload: res.data
+       });
+    })
+    .catch(err => console.log(err));
 };
 
 export const getRooms = () => dispatch => {

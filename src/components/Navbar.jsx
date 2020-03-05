@@ -11,10 +11,12 @@ export default function Navbar(props) {
     <div>
       <StyledNavbar>
         <Link to="/">Robomaze</Link>
+        <Link to="/login">Login</Link>
         <Link to="/about">About</Link>
       </StyledNavbar>
       <main>
         <Route exact path="/" component={Auth} />
+        <Route exact path="/login" component={Auth} />
         <Route exact path="/about" component={About} />
         <ProtectedRoute path="/play" component={Game} />
       </main>

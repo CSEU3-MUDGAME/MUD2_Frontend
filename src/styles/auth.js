@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const AuthStyle = styled.div`
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
+        margin: 80px auto;
 
         input {
             margin: 20px auto;
@@ -37,5 +37,9 @@ export const AuthStyle = styled.div`
         span {
             text-decoration:underline;
             color:#e25822
+        }
+
+        p {
+            margin-top: -40px;
         }
 `

@@ -8,12 +8,18 @@ export const StyledSidebar = styled.div`
     margin-left: 1rem;
     justify-content: space-between;
     .controls, .players {
-        border: 4px solid #a52929;
+        border: 4px solid #8B4513;
     }
     .game-data {
         margin: 0 0 1.5rem 0;
-        border: 4px solid #a52929;
+        border: 4px solid #8B4513;
         padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        .dirs {
+            p {
+                margin: 0;
+            }
+        }
     }
     .players {
         overflow: hidden;
@@ -21,12 +27,13 @@ export const StyledSidebar = styled.div`
     }
     .controls {
         padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.4);
         .row {
             display: flex;
             justify-content: center;
             .empty, img {
-                width: 35%;
-                height: auto;
+                width: 30px;
+                height: 30px;
             }
             img {
                 border-radius: 50%;

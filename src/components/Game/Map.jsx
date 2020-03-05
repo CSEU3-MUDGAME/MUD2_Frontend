@@ -3,7 +3,7 @@ import { StyledMap } from "../../styles/map";
 import Player from "./Player";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
-import coins from "../../assets/icons/coins.png";
+import star from "../../assets/icons/star.png";
 
 export function Map(props) {
   const { player, rooms, getRooms, addScore, initGame } = props;
@@ -20,6 +20,8 @@ return (
             return(
             <div key={room.id} className={`room n-wall-${room.up} s-wall-${room.down} e-wall-${room.right} w-wall-${room.left}`}>
              <>{room.id === player.roomNo ? <Player /> : null}</>
+             {room.items.length > 0 ? <div className="blob"></div> : null}
+             {room.game_exit === true ? <img src={star} alt="exit" className="exit"/> : null}
             </div>)
           })
           

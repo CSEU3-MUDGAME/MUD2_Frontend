@@ -11,23 +11,19 @@ export function Sidebar(props) {
   const { player, movePlayer } = props;
 
   useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      
-      console.log(e.code)
-      if(e.code === "ArrowUp"){
-        movePlayer("n")
+    window.addEventListener("keydown", e => {
+      console.log(e.code);
+      if (e.code === "ArrowUp") {
+        movePlayer("n");
+      } else if (e.code === "ArrowDown") {
+        movePlayer("s");
+      } else if (e.code === "ArrowLeft") {
+        movePlayer("w");
+      } else if (e.code === "ArrowRight") {
+        movePlayer("e");
       }
-      else if(e.code === "ArrowDown"){
-        movePlayer("s")
-      }
-      else if(e.code === "ArrowLeft"){
-        movePlayer("w")
-      }
-      else if(e.code === "ArrowRight"){
-        movePlayer("e")
-      }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <StyledSidebar>
@@ -39,22 +35,61 @@ export function Sidebar(props) {
             <p>Player: {player.name}</p>
             <p>Room Number: {player.roomNo}</p>
 
-            <div>Players: {player.players.map(p => <p key={p}>{p}</p>)}</div> 
+            <div>
+              Players:{" "}
+              {player.players.map(p => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+          <div className="game-data">
+            <div className="dirs">
+              You can move:
+              <p>{player.up === true ? "up" : null}</p>
+              <p>{player.down === true ? "down" : null}</p>
+              <p>{player.left === true ? "left" : null}</p>
+              <p>{player.right === true ? "right" : null}</p>
+            </div>
+            {/* <div>
+              Items
+              {!player.items ? null : player.items.split(",").map(item => <p>{item}</p>)}
+     
+            </div> */}
           </div>
           <div className="controls">
             <div className="row">
               <div className="empty"></div>
-              <img src={arrowUp} onClick={() => movePlayer("n")} alt="up" id="up"/>
+              <img
+                src={arrowUp}
+                onClick={() => movePlayer("n")}
+                alt="up"
+                id="up"
+              />
               <div className="empty"></div>
             </div>
             <div className="row">
-              <img src={arrowLeft} onClick={() => movePlayer("w")} alt="left" id="left"/>
+              <img
+                src={arrowLeft}
+                onClick={() => movePlayer("w")}
+                alt="left"
+                id="left"
+              />
               <div className="empty"></div>
-              <img src={arrowRight} onClick={() => movePlayer("e")} alt="right" id="right"/>
+              <img
+                src={arrowRight}
+                onClick={() => movePlayer("e")}
+                alt="right"
+                id="right"
+              />
             </div>
             <div className="row">
               <div className="empty"></div>
-              <img src={arrowDown} onClick={() => movePlayer("s")} alt="down" id="down"/>
+              <img
+                src={arrowDown}
+                onClick={() => movePlayer("s")}
+                alt="down"
+                id="down"
+              />
               <div className="empty"></div>
             </div>
           </div>
@@ -69,6 +104,5 @@ const mapStateToProps = state => {
     player: state.player.player
   };
 };
-
 
 export default connect(mapStateToProps, actions)(Sidebar);

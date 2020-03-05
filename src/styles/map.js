@@ -8,12 +8,23 @@ export const StyledMap = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   font-size: 8px;
-  border: 2px solid #a52929;
+  border: 2px solid #8B4513;
   .room {
     width: ${100/25}%;
     height: ${100/30}%;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    .blob {
+      width: 5px;
+      height: 5px;
+      background-color: rgba(32, 185, 212, 0.38);
+      margin: 5px auto;
+      border-radius: 50%;
+    }
+    .exit {
+      width: 16px;
+      height: 16px;
+    }
 
     .coins {
       width: 20px;
@@ -26,19 +37,19 @@ export const StyledMap = styled.div`
       padding: 0;
     }
     &.n-wall-false {
-      border-top: 2px solid #a52929;
+      border-top: 2px solid #8B4513;
     }
 
     &.s-wall-false {
-      border-bottom: 2px solid #a52929;
+      border-bottom: 2px solid #8B4513;
     }
 
     &.w-wall-false {
-      border-left: 2px solid #a52929;
+      border-left: 2px solid #8B4513;
     }
 
     &.e-wall-false {
-      border-right: 2px solid #a52929;
+      border-right: 2px solid #8B4513;
     }
 
 

@@ -15,14 +15,13 @@ export function Map(props) {
 return (
     <StyledMap>
       {!rooms ? "Loading" : rooms.map(row => (
-        <div className="column">
-          {row.map(room => {
+          row.map(room => {
             return(
             <div className={`room n-wall-${room.up} s-wall-${room.down} e-wall-${room.right} w-wall-${room.left}`}>
              <>{room.id === player.currentRoom ? <Player /> : null}</>
             </div>)
-          })}
-        </div>
+          })
+          
       ))}
     </StyledMap>
   );

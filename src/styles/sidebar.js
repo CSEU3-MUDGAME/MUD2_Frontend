@@ -14,6 +14,12 @@ export const StyledSidebar = styled.div`
         margin: 0 0 1.5rem 0;
         border: 4px solid #a52929;
         padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        .dirs {
+            p {
+                margin: 0;
+            }
+        }
     }
     .players {
         overflow: hidden;
@@ -21,12 +27,13 @@ export const StyledSidebar = styled.div`
     }
     .controls {
         padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.4);
         .row {
             display: flex;
             justify-content: center;
             .empty, img {
-                width: 35%;
-                height: auto;
+                width: 30px;
+                height: 30px;
             }
             img {
                 border-radius: 50%;

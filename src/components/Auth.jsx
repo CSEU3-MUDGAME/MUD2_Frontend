@@ -28,7 +28,7 @@ function Login(props) {
 
   const handlelogin = () => {
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/login/", {
+      .post("https://adv-team2.herokuapp.com/api/login/", {
         username: usernameRef.current.value,
         password: passwordRef.current.value
       })
@@ -69,7 +69,7 @@ function Register(props) {
   const handleregister = e => {
     e.preventDefault();
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/registration/", {
+      .post("https://adv-team2.herokuapp.com/api/registration/", {
         username: usernameRef.current.value,
         password1: password1Ref.current.value,
         password2: password2Ref.current.value

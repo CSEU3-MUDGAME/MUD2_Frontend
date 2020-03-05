@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as types from "./types";
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 export const initGame = () => dispatch => {
-    axiosWithAuth().get("https://lambda-mud-test.herokuapp.com/api/adv/init/")
+  axiosWithAuth()
+    .get("https://adv-team2.herokuapp.com/api/adv/init/")
     .then(res => {
       console.log(res);
       dispatch({
@@ -11,27 +12,36 @@ export const initGame = () => dispatch => {
         payload: res.data
       });
     })
-    .catch(err =>
-        console.log(err)
-    );
+    .catch(err => console.log(err));
 };
 
-export const movePlayer = (dir) => dispatch => {
-    dispatch({
-        type: types.MOVE_PLAYER,
-        payload: dir 
-      })
-}
+export const movePlayer = dir => dispatch => {
+  dispatch({
+    type: types.MOVE_PLAYER,
+    payload: dir
+  });
+};
 
 export const getRooms = () => dispatch => {
-  dispatch({
-    type: types.GET_ROOMS,
-  })
-}
+  // dispatch({
+  //   // axios request for rooms
+  //   type: types.GET_ROOMS,
+  // })
+  axiosWithAuth()
+    .get("https://adv-team2.herokuapp.com/api/adv/get_rooms/")
+    .then(res => {
+      console.log(res);
+      dispatch({
+        type: types.GET_ROOMS,
+        payload: res.data
+      });
+    })
+    .catch(err => console.log(err));
+};
 
-export const addScore = (amt) => dispatch => {
+export const addScore = amt => dispatch => {
   dispatch({
     type: types.ADD_SCORE,
-    payload: amt 
-  })
-}
+    payload: amt
+  });
+};

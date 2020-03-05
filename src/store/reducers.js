@@ -39,6 +39,8 @@ export function playerReducer(state = initialState.player, action){
 
 export function roomsReducer(state = initialState.rooms, action){
     switch(action.type){
+        case types.GET_ROOMS:
+            return {...state, rooms: action.payload}
         default:
             return state;
     }

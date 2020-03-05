@@ -6,6 +6,7 @@ import {AuthStyle} from "../styles/auth"
 export default function Auth(props) {
   const [authType, setAuthType] = useState("login");
   return (
+    <div className = "auth">
     <AuthStyle>
       {authType === "login" ? <Login {...props} /> : <Register {...props}/>}
       {authType === "login" ? (
@@ -20,6 +21,7 @@ export default function Auth(props) {
         </p>
       )}
     </AuthStyle>
+    </div>
   );
 }
 

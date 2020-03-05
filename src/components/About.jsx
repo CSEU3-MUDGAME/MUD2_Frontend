@@ -1,8 +1,9 @@
 import React from "react";
 import { AboutStyle } from '../styles/about';
-
+    
 export default function About() {
     return (
+        <div className = "about">
         <AboutStyle>
             <h1>Meet the Team</h1>
             <div>
@@ -20,5 +21,6 @@ export default function About() {
                 </div>
             </div>
         </AboutStyle>
+        </div>
     )
 }
